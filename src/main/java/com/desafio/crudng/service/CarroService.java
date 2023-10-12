@@ -32,5 +32,15 @@ public class CarroService {
             return carroRepository.save(updatedCar);
     }
 
+    public void deleteCar(Long id) {
+        carroRepository.deleteById(id);
+    }
 
+    public Carro getById(Long id) {
+        return carroRepository.findById(id).orElse(null);
+    }
+
+    public void delete(Long id) {
+        carroRepository.deleteById(id);
+    }
 }

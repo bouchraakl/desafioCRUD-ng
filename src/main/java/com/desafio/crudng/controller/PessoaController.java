@@ -34,6 +34,16 @@ public class PessoaController {
         return pessoaService.updatePessoa(id, updatedPessoas);
     }
 
+    @GetMapping("/get/{id}")
+    public Pessoa getById(@PathVariable Long id) {
+        return pessoaService.getById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        pessoaService.delete(id);
+    }
+
 
 
 }

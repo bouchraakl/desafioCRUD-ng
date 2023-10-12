@@ -1,6 +1,5 @@
 package com.desafio.crudng.controller;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,9 +31,19 @@ public class CarroController {
         return carroService.getAllCars();
     }
 
+    @GetMapping("/get/{id}")
+    public Carro getById(@PathVariable Long id) {
+        return carroService.getById(id);
+    }
+
     @PutMapping("/{id}")
     public Carro updateCar(@PathVariable Long id, @RequestBody Carro updatedCar) {
         return carroService.updateCar(id, updatedCar);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        carroService.delete(id);
     }
 
 

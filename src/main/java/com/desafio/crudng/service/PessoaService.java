@@ -29,4 +29,12 @@ public class PessoaService {
         updatedPessoas.setId(id);
         return pessoaRepository.save(updatedPessoas);
     }
+
+    public Pessoa getById(Long id) {
+        return pessoaRepository.findById(id).orElse(null);
+    }
+
+    public void delete(Long id) {
+        pessoaRepository.deleteById(id);
+    }
 }

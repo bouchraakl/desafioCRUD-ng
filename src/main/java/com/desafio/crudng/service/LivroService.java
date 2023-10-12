@@ -32,4 +32,11 @@ public class LivroService {
         return livroRepository.save(updatedLivro);
     }
 
+    public Livro getById(Long id) {
+            return livroRepository.findById(id).orElse(null);
+    }
+
+    public void delete(Long id) {
+        livroRepository.deleteById(id);
+    }
 }
